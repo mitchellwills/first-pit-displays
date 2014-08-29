@@ -1,0 +1,39 @@
+<div class="data-table-header-container">
+	<h3 style="text-align:center;">{{title}}</h3>
+	<table class="table table-striped table-condensed data-table-header">
+		<thead>
+			<tr>
+				<th ng-repeat="heading in data.headings track by $index" ng-style="{width: config.widths[$index]*100+'%'}" class="{{config.headerStyles[$index]}}">{{heading}}</th>
+			</tr>
+		</thead>
+	</table>
+</div>
+<div class="data-table-body-container">
+	<h3 style="text-align:center;">{{title}}</h3>
+	<table class="table table-striped table-condensed data-table-body">	<thead>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="row in data.data track by $index" ng-init="rowIndex = $index">
+				<td ng-repeat="item in row track by $index" ng-init="columnIndex = $index" ng-style="{width: config.widths[columnIndex]*100+'%'}">{{item}}</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>&nbsp;</th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<div class="data-table-footer-container">
+	<table class="table table-striped table-condensed data-table-footer">
+		<tfoot>
+			<tr>
+				<th ng-repeat="heading in data.headings track by $index" ng-style="{width: config.widths[$index]*100+'%'}" class="{{config.headerStyles[$index]}}">{{heading}}</th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
